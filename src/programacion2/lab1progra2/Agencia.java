@@ -444,6 +444,7 @@ CuentaBancaria cuentabanc;
 
     private void InteresMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InteresMenuActionPerformed
         // TODO add your handling code here:
+        op.intereses();
         JOptionPane.showMessageDialog(null,"Intereses agregados con exito." );
     }//GEN-LAST:event_InteresMenuActionPerformed
 
