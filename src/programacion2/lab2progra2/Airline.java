@@ -86,7 +86,7 @@ public class Airline extends javax.swing.JFrame {
         PanelVerPasajeros = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        AreaVerPasajeros = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -311,9 +311,10 @@ public class Airline extends javax.swing.JFrame {
 
         jButton3.setText("Volver al menu");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        AreaVerPasajeros.setColumns(20);
+        AreaVerPasajeros.setRows(5);
+        AreaVerPasajeros.setText("Juan yuja 500 pagado");
+        jScrollPane1.setViewportView(AreaVerPasajeros);
 
         javax.swing.GroupLayout PanelVerPasajerosLayout = new javax.swing.GroupLayout(PanelVerPasajeros);
         PanelVerPasajeros.setLayout(PanelVerPasajerosLayout);
@@ -496,6 +497,7 @@ public class Airline extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea AreaVerPasajeros;
     private javax.swing.JButton BotonCancelarTicket;
     private javax.swing.JButton BotonComprar;
     private javax.swing.JButton BotonComprarRegresar;
@@ -520,7 +522,6 @@ public class Airline extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel labelCosto;
     private javax.swing.JLabel labelDescuento;
     private javax.swing.JLabel labelTotalpagar;
