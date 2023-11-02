@@ -9,12 +9,14 @@ public abstract class BlockBusterItem {
     private String nombre;
     private double precioRenta;
     private Date fechaAdicion;
+    private String tipoItem;
 
-    public BlockBusterItem(int codigo, String nombre, double precioRenta) {
+    public BlockBusterItem(int codigo, String nombre, double precioRenta, String tipoItem) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precioRenta = precioRenta;
-        this.fechaAdicion = new Date(); // La fecha de adición se establece como la fecha actual por defecto
+        this.fechaAdicion = new Date(); 
+        this.tipoItem = tipoItem;
     }
 
     public int getCodigo() {

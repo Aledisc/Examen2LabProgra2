@@ -9,9 +9,9 @@ import java.util.Date;
 public class MovieItem extends BlockBusterItem {
     private String estado;
 
-    public MovieItem(int codigo, String nombre, double precioRenta) {
-        super(codigo, nombre, precioRenta);
-        this.estado = "ESTRENO"; // Estado por defecto
+    public MovieItem(int codigo, String nombre, double precioRenta, String tipoItem) {
+        super(codigo, nombre, precioRenta, tipoItem);
+        this.estado = "ESTRENO"; 
     }
 
     @Override

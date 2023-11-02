@@ -4,6 +4,8 @@
  */
 package prueba1progra2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Admin
@@ -13,8 +15,21 @@ public class main extends javax.swing.JFrame {
     /**
      * Creates new form main
      */
+    BlockBuster bb = new BlockBuster();
+    
     public main() {
         initComponents();
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        iniciarPaneles();
+    }
+
+    public void iniciarPaneles() {
+        this.PanelPrincipal.setVisible(true);
+        this.PanelAgregar.setVisible(false);
+        this.setLocation(300, 300);
+        this.setSize(520, 480);
+        grupo_agregar.add(RadioGame);
+        grupo_agregar.add(RadioMovie);
     }
 
     /**
@@ -26,19 +41,186 @@ public class main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupo_agregar = new javax.swing.ButtonGroup();
+        PanelPrincipal = new javax.swing.JPanel();
+        BotonAgregar = new javax.swing.JButton();
+        BotonBuscar = new javax.swing.JButton();
+        BotonRentar = new javax.swing.JButton();
+        BotonAuditar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        PanelAgregar = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        RadioMovie = new javax.swing.JRadioButton();
+        RadioGame = new javax.swing.JRadioButton();
+        TextCodigo = new javax.swing.JTextField();
+        TextNombre = new javax.swing.JTextField();
+        BotonAgregarItem = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        BotonAgregar.setText("Agregar");
+        BotonAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAgregarActionPerformed(evt);
+            }
+        });
+
+        BotonBuscar.setText("Buscar");
+        BotonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonBuscarActionPerformed(evt);
+            }
+        });
+
+        BotonRentar.setText("Rentar");
+
+        BotonAuditar.setText("Auditar");
+
+        jLabel1.setBackground(new java.awt.Color(51, 51, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("BLOCK BUSTER");
+
+        javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
+        PanelPrincipal.setLayout(PanelPrincipalLayout);
+        PanelPrincipalLayout.setHorizontalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonAgregar)
+                    .addComponent(BotonBuscar))
+                .addGap(58, 58, 58)
+                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonAuditar)
+                    .addComponent(BotonRentar))
+                .addContainerGap(120, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(175, 175, 175))
+        );
+        PanelPrincipalLayout.setVerticalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalLayout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonAgregar)
+                    .addComponent(BotonRentar))
+                .addGap(27, 27, 27)
+                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonBuscar)
+                    .addComponent(BotonAuditar))
+                .addGap(213, 213, 213))
+        );
+
+        jLabel2.setText("Agregar");
+
+        jLabel3.setText("Codigo:");
+
+        jLabel4.setText("Nombre:");
+
+        jLabel5.setText("Tipo");
+
+        RadioMovie.setText("Movie");
+        RadioMovie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioMovieActionPerformed(evt);
+            }
+        });
+
+        RadioGame.setText("Game");
+        RadioGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioGameActionPerformed(evt);
+            }
+        });
+
+        BotonAgregarItem.setText("Agregar");
+        BotonAgregarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAgregarItemActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelAgregarLayout = new javax.swing.GroupLayout(PanelAgregar);
+        PanelAgregar.setLayout(PanelAgregarLayout);
+        PanelAgregarLayout.setHorizontalGroup(
+            PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAgregarLayout.createSequentialGroup()
+                .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAgregarLayout.createSequentialGroup()
+                        .addGap(182, 182, 182)
+                        .addComponent(jLabel2))
+                    .addGroup(PanelAgregarLayout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(PanelAgregarLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelAgregarLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(53, 53, 53)
+                                .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(RadioGame)
+                                    .addComponent(RadioMovie)))
+                            .addGroup(PanelAgregarLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(29, 29, 29)
+                                .addComponent(TextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(PanelAgregarLayout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(BotonAgregarItem)))
+                .addContainerGap(161, Short.MAX_VALUE))
+        );
+        PanelAgregarLayout.setVerticalGroup(
+            PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAgregarLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel2)
+                .addGap(49, 49, 49)
+                .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(TextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(TextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(RadioMovie))
+                .addGap(18, 18, 18)
+                .addComponent(RadioGame)
+                .addGap(51, 51, 51)
+                .addComponent(BotonAgregarItem)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel6.setText("Rentar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 370, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(194, 194, 194)
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 519, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel6)
+                .addContainerGap(335, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -47,19 +229,63 @@ public class main extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(74, 74, 74)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(569, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(77, 77, 77)
+                .addComponent(PanelAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(190, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PanelAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarActionPerformed
+        // TODO add your handling code here:
+        this.PanelPrincipal.setVisible(false);
+        this.PanelAgregar.setVisible(true);
+
+
+    }//GEN-LAST:event_BotonAgregarActionPerformed
+
+    private void RadioGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioGameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RadioGameActionPerformed
+
+    private void RadioMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioMovieActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_RadioMovieActionPerformed
+
+    private void BotonAgregarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarItemActionPerformed
+        // TODO add your handling code here:
+        String tipo = "";
+
+        if (RadioGame.isSelected()) {
+            tipo = "MOVIE";
+        } else if (RadioMovie.isSelected()) {
+            tipo = "GAME";
+        }
+        bb.agregarItem(Integer.toString((TextCodigo.getText()), ;
+
+    }//GEN-LAST:event_BotonAgregarItemActionPerformed
+
+    private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "aa");
+        
+    }//GEN-LAST:event_BotonBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,6 +323,24 @@ public class main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonAgregar;
+    private javax.swing.JButton BotonAgregarItem;
+    private javax.swing.JButton BotonAuditar;
+    private javax.swing.JButton BotonBuscar;
+    private javax.swing.JButton BotonRentar;
+    private javax.swing.JPanel PanelAgregar;
+    private javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JRadioButton RadioGame;
+    private javax.swing.JRadioButton RadioMovie;
+    private javax.swing.JTextField TextCodigo;
+    private javax.swing.JTextField TextNombre;
+    private javax.swing.ButtonGroup grupo_agregar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
