@@ -27,10 +27,10 @@ public class main extends javax.swing.JFrame {
         this.PanelPrincipal.setVisible(true);
         this.PanelAgregar.setVisible(false);
         this.setLocation(300, 300);
-        this.setSize(800, 800);
+        this.setSize(650, 600);
         grupo_agregar.add(RadioGame);
         grupo_agregar.add(RadioMovie);
-        this.PanelRentar.setVisible(false);
+        this.PANELbuscar.setVisible(false);
     }
 
     /**
@@ -59,8 +59,11 @@ public class main extends javax.swing.JFrame {
         TextCodigo = new javax.swing.JTextField();
         TextNombre = new javax.swing.JTextField();
         BotonAgregarItem = new javax.swing.JButton();
-        PanelRentar = new javax.swing.JPanel();
+        PANELbuscar = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        Textobuscaer = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        BuscarBoton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,8 +82,18 @@ public class main extends javax.swing.JFrame {
         });
 
         BotonRentar.setText("Rentar");
+        BotonRentar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRentarActionPerformed(evt);
+            }
+        });
 
         BotonAuditar.setText("Auditar");
+        BotonAuditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAuditarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(51, 51, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -205,23 +218,57 @@ public class main extends javax.swing.JFrame {
                 .addContainerGap(114, Short.MAX_VALUE))
         );
 
-        jLabel6.setText("Rentar");
+        jLabel6.setText("Buscar");
 
-        javax.swing.GroupLayout PanelRentarLayout = new javax.swing.GroupLayout(PanelRentar);
-        PanelRentar.setLayout(PanelRentarLayout);
-        PanelRentarLayout.setHorizontalGroup(
-            PanelRentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelRentarLayout.createSequentialGroup()
-                .addGap(194, 194, 194)
-                .addComponent(jLabel6)
+        Textobuscaer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextobuscaerActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Codigo");
+
+        BuscarBoton.setText("BUscar Boton");
+        BuscarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarBotonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PANELbuscarLayout = new javax.swing.GroupLayout(PANELbuscar);
+        PANELbuscar.setLayout(PANELbuscarLayout);
+        PANELbuscarLayout.setHorizontalGroup(
+            PANELbuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PANELbuscarLayout.createSequentialGroup()
+                .addGroup(PANELbuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PANELbuscarLayout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(Textobuscaer, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PANELbuscarLayout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addGroup(PANELbuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(PANELbuscarLayout.createSequentialGroup()
+                                .addComponent(BuscarBoton)
+                                .addGap(42, 42, 42))
+                            .addGroup(PANELbuscarLayout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(59, 59, 59)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        PanelRentarLayout.setVerticalGroup(
-            PanelRentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelRentarLayout.createSequentialGroup()
+        PANELbuscarLayout.setVerticalGroup(
+            PANELbuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PANELbuscarLayout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addComponent(jLabel6)
-                .addContainerGap(335, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addGroup(PANELbuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Textobuscaer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(36, 36, 36)
+                .addComponent(BuscarBoton)
+                .addContainerGap(198, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -231,7 +278,7 @@ public class main extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PanelRentar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PANELbuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(81, 81, 81)
                 .addComponent(PanelAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -249,7 +296,7 @@ public class main extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(PanelAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(PanelRentar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PANELbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(108, Short.MAX_VALUE))
         );
 
@@ -292,9 +339,36 @@ public class main extends javax.swing.JFrame {
 
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "aa");
+        this.PANELbuscar.setVisible(true);
+        this.PanelPrincipal.setVisible(false);
         
     }//GEN-LAST:event_BotonBuscarActionPerformed
+
+    private void TextobuscaerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextobuscaerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextobuscaerActionPerformed
+
+    private void BuscarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarBotonActionPerformed
+        // TODO add your handling code here:
+        bb.buscarItem(Integer.parseInt(Textobuscaer.getText()), "PLAYSTATION");
+        JOptionPane.showMessageDialog(null, "se ha buscado el objeto con exito o");
+        this.PANELbuscar.setVisible(false);
+        this.PanelPrincipal.setVisible(true);
+    }//GEN-LAST:event_BuscarBotonActionPerformed
+
+    private void BotonAuditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAuditarActionPerformed
+        // TODO add your handling code here:
+                JOptionPane.showMessageDialog(null, "proximamente");
+
+    }//GEN-LAST:event_BotonAuditarActionPerformed
+
+    private void BotonRentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRentarActionPerformed
+        // TODO add your handling code here:
+        
+        
+                JOptionPane.showMessageDialog(null, "opcion en mantenimiento");
+
+    }//GEN-LAST:event_BotonRentarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,13 +411,15 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton BotonAuditar;
     private javax.swing.JButton BotonBuscar;
     private javax.swing.JButton BotonRentar;
+    private javax.swing.JButton BuscarBoton;
+    private javax.swing.JPanel PANELbuscar;
     private javax.swing.JPanel PanelAgregar;
     private javax.swing.JPanel PanelPrincipal;
-    private javax.swing.JPanel PanelRentar;
     private javax.swing.JRadioButton RadioGame;
     private javax.swing.JRadioButton RadioMovie;
     private javax.swing.JTextField TextCodigo;
     private javax.swing.JTextField TextNombre;
+    private javax.swing.JTextField Textobuscaer;
     private javax.swing.ButtonGroup grupo_agregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -351,5 +427,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }
