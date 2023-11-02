@@ -11,7 +11,7 @@ public class VideoGameItem extends BlockBusterItem {
     private String consola;
 
     public VideoGameItem(int codigo,String nombre,String consola) {
-        super(codigo,nombre, 30, consola);
+        super(codigo,nombre, precioRenta, consola);
         if(consolaValida(consola)) {
             this.consola=consola;
         } else {

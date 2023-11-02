@@ -27,9 +27,10 @@ public class main extends javax.swing.JFrame {
         this.PanelPrincipal.setVisible(true);
         this.PanelAgregar.setVisible(false);
         this.setLocation(300, 300);
-        this.setSize(520, 480);
+        this.setSize(800, 800);
         grupo_agregar.add(RadioGame);
         grupo_agregar.add(RadioMovie);
+        this.PanelRentar.setVisible(false);
     }
 
     /**
@@ -58,7 +59,7 @@ public class main extends javax.swing.JFrame {
         TextCodigo = new javax.swing.JTextField();
         TextNombre = new javax.swing.JTextField();
         BotonAgregarItem = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        PanelRentar = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -178,7 +179,7 @@ public class main extends javax.swing.JFrame {
                     .addGroup(PanelAgregarLayout.createSequentialGroup()
                         .addGap(163, 163, 163)
                         .addComponent(BotonAgregarItem)))
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         PanelAgregarLayout.setVerticalGroup(
             PanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,23 +202,23 @@ public class main extends javax.swing.JFrame {
                 .addComponent(RadioGame)
                 .addGap(51, 51, 51)
                 .addComponent(BotonAgregarItem)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         jLabel6.setText("Rentar");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelRentarLayout = new javax.swing.GroupLayout(PanelRentar);
+        PanelRentar.setLayout(PanelRentarLayout);
+        PanelRentarLayout.setHorizontalGroup(
+            PanelRentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRentarLayout.createSequentialGroup()
                 .addGap(194, 194, 194)
                 .addComponent(jLabel6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        PanelRentarLayout.setVerticalGroup(
+            PanelRentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRentarLayout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addComponent(jLabel6)
                 .addContainerGap(335, Short.MAX_VALUE))
@@ -230,21 +231,25 @@ public class main extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelRentar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(77, 77, 77)
+                .addGap(81, 81, 81)
                 .addComponent(PanelAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PanelAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(43, 43, 43)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(PanelAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addComponent(PanelRentar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(108, Short.MAX_VALUE))
         );
 
@@ -277,8 +282,12 @@ public class main extends javax.swing.JFrame {
         } else if (RadioMovie.isSelected()) {
             tipo = "GAME";
         }
-        bb.agregarItem(Integer.toString((TextCodigo.getText()), ;
-
+        bb.agregarItem(Integer.parseInt(TextCodigo.getText()), TextNombre.getText(), "PLAYSTATION"); //perdonnnbn sinono sirve pipipipi
+        this.PanelPrincipal.setVisible(true);
+        this.PanelAgregar.setVisible(false);
+        
+        TextCodigo.setText("");
+        TextNombre.setText("");
     }//GEN-LAST:event_BotonAgregarItemActionPerformed
 
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
@@ -330,6 +339,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JButton BotonRentar;
     private javax.swing.JPanel PanelAgregar;
     private javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JPanel PanelRentar;
     private javax.swing.JRadioButton RadioGame;
     private javax.swing.JRadioButton RadioMovie;
     private javax.swing.JTextField TextCodigo;
@@ -341,6 +351,5 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

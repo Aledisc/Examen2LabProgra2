@@ -31,7 +31,7 @@ public class BlockBuster {
 
 
             if (tipoItem.equals("MOVIE")) {
-                MovieItem movieItem = new MovieItem(codigo, nombre, tipoItem);
+                MovieItem movieItem = new MovieItem(codigo, nombre, 30, tipoItem);
                 items.add(movieItem);
             } else if (tipoItem.equals("GAME")) {
                 VideoGameItem videoGameItem = new VideoGameItem(codigo, nombre, tipoItem);
@@ -39,6 +39,7 @@ public class BlockBuster {
             }
 
         } else {
+            System.out.println("no hay vuelvaee");
         }
     }
 
