@@ -107,7 +107,7 @@ public class Ticket extends javax.swing.JFrame {
         PanelEliminarEvento = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        EliminarID = new javax.swing.JTextField();
         jButton16 = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
 
@@ -563,6 +563,11 @@ public class Ticket extends javax.swing.JFrame {
         jLabel22.setText("Ingrese el ID:");
 
         jButton16.setText("Eliminar");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         jLabel23.setBackground(new java.awt.Color(204, 0, 51));
         jLabel23.setText("Se cobrara una indemnizacion por cancelar el evento...");
@@ -577,7 +582,7 @@ public class Ticket extends javax.swing.JFrame {
                         .addGap(99, 99, 99)
                         .addComponent(jLabel22)
                         .addGap(58, 58, 58)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(EliminarID, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelEliminarEventoLayout.createSequentialGroup()
                         .addGap(171, 171, 171)
                         .addGroup(PanelEliminarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -598,7 +603,7 @@ public class Ticket extends javax.swing.JFrame {
                 .addGap(74, 74, 74)
                 .addGroup(PanelEliminarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EliminarID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addComponent(jLabel23)
                 .addGap(18, 18, 18)
@@ -617,7 +622,7 @@ public class Ticket extends javax.swing.JFrame {
                 .addComponent(PanelCrearEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(PanelEliminarEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1439, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         PanelAdministrarEventosLayout.setVerticalGroup(
             PanelAdministrarEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -645,9 +650,9 @@ public class Ticket extends javax.swing.JFrame {
                 .addComponent(PanelControlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PanelAdministrarEventos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PanelAdministrarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(974, Short.MAX_VALUE))
         );
         PanelMenuPrincipalLayout.setVerticalGroup(
             PanelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -803,6 +808,15 @@ public class Ticket extends javax.swing.JFrame {
         
     }//GEN-LAST:event_CrearEventoActionPerformed
 
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        if(gestion.eliminarEventoPorID(Integer.parseInt(EliminarID.getText()))){
+            JOptionPane.showMessageDialog(null, "Se ha eliminado el evento exitosamente");
+        }else{
+            JOptionPane.showMessageDialog(null, "No se encontro un evento con el ID");
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -853,6 +867,7 @@ public class Ticket extends javax.swing.JFrame {
     private javax.swing.JButton CrearUsuarioBoton;
     private javax.swing.JLabel DisplayRolMenu;
     private javax.swing.JLabel DisplayUsernameMenu;
+    private javax.swing.JTextField EliminarID;
     private javax.swing.JTextField FieldCapacidad;
     private javax.swing.JTextField FieldFecha;
     private javax.swing.JTextField FieldID;
@@ -896,6 +911,5 @@ public class Ticket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 }

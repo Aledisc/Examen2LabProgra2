@@ -123,13 +123,14 @@ public class Gestion {
         eventos.add(nuevoEvento);
     }
 
-    public void eliminarEventoPorID(int id) {
+    public boolean eliminarEventoPorID(int id) {
         // Itera sobre la lista de eventos y busca el evento con el ID especificado
         for (Evento2 evento : eventos) {
             if (evento.getID() == id) {
                 eventos.remove(evento);
-                return;
+                return true;
             }
         }
+        return false;
     }
 }
