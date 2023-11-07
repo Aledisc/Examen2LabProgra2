@@ -63,6 +63,18 @@ public class Gestion {
         return username.getPassword().equals(passwordIngresada);
     }
 
+    public String obtenerPasswordPorUsernameRecursivo(String username, List<Usuario> usuarios, int indice) {
+        if (indice < usuarios.size()) {
+            Usuario usuario = usuarios.get(indice);
+            if (usuario.getUsername().equals(username)) {
+                return usuario.getPassword(); // Se encontro un usuario con el nombre de usuario proporcionado
+            } else {
+                return obtenerPasswordPorUsernameRecursivo(username, usuarios, indice + 1); // Llamada recursiva 
+            }
+        }
+        return null; // No se encontro ningún usuario con el nombre de usuario proporcionado
+    }
+
     public boolean iniciarSesion(String nombreUsuario, String contraseña) {
         Usuario usuario = encontrarUsuario(nombreUsuario);
 
@@ -133,4 +145,34 @@ public class Gestion {
         }
         return false;
     }
+
+    public Usuario buscarUsuarioPorUsernameRecursivo(String username, Usuario2 List
+    <Usuario> usuarios, int indice
+
+    
+        ) {
+    if (indice < usuarios.size()) {
+            Usuario usuario = usuarios.get(indice);
+            if (usuario.getUsername().equals(username)) {
+                return usuario;
+            } else {
+                return buscarUsuarioPorUsernameRecursivo(username, usuarios, indice + 1);
+            }
+        }
+        return null;
+    }
+
+    public boolean eliminarEventoPorIDRecursivo(int id, List<Eventos2> listaEventos, int indice) {
+        if (indice < listaEventos.size()) {
+            Eventos2 evento = listaEventos.get(indice);
+            if (evento.getID() == id) {
+                listaEventos.remove(indice);
+                return true; // Evento encontrado y eliminado
+            } else {
+                return eliminarEventoPorIDRecursivo(id, listaEventos, indice + 1);
+            }
+        }
+        return false;
+    }
+
 }
