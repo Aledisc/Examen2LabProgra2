@@ -16,6 +16,7 @@ public class Evento2 {
     private int capacidad;
     //private double costoGrama;
     private String autor;
+    private final String ESTADIO="Estadio olimpico";
 
 //    Evento2(int ID, String nombreEvento, double valorRenta, String autor) {
 //        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
