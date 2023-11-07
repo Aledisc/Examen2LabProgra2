@@ -5,7 +5,7 @@
 package programacion2.JavaTicket;
 
 import javax.swing.JOptionPane;
-
+import com.toedter.calendar.JCalendar;
 /**
  *
  * @author Admin
@@ -16,7 +16,7 @@ public class Ticket extends javax.swing.JFrame {
      * Creates new form Ticket
      */
     Gestion gestion = new Gestion();
-    
+    JCalendar calendar = new JCalendar();
     //Para cerrar sesion usar SesionUsuario.cerrarSesion(); en el boton!!!!!!!!!!
     
     
@@ -34,6 +34,9 @@ public class Ticket extends javax.swing.JFrame {
         this.PanelInicio.setVisible(true);
         this.PanelControlMenu.setVisible(false);
         this.PanelMenuPrincipal.setVisible(false);
+        this.PanelAdministrarEventos.setVisible(false);
+        this.PanelEliminarEvento.setVisible(false);
+        this.PanelControlMenu.setVisible(false);
         
         
     }
@@ -48,6 +51,7 @@ public class Ticket extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel4 = new javax.swing.JPanel();
         PanelLogin = new javax.swing.JPanel();
         UsernameLogin = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -75,7 +79,47 @@ public class Ticket extends javax.swing.JFrame {
         CerrarSesionBoton = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        BotonReportes = new javax.swing.JButton();
+        PanelAdministrarUsuarios = new javax.swing.JPanel();
+        PanelAdministrarEventos = new javax.swing.JPanel();
+        PanelEventos = new javax.swing.JPanel();
+        BotonCrearEvento = new javax.swing.JButton();
+        BotonEliminarEvento = new javax.swing.JButton();
+        BotonEditarEvento = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        PanelCrearEvento = new javax.swing.JPanel();
+        CrearDeportivo = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jButton10 = new javax.swing.JButton();
+        PanelEliminarEvento = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jButton16 = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 501, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,31 +146,36 @@ public class Ticket extends javax.swing.JFrame {
         PanelLogin.setLayout(PanelLoginLayout);
         PanelLoginLayout.setHorizontalGroup(
             PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(135, 135, 135))
             .addGroup(PanelLoginLayout.createSequentialGroup()
                 .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLoginLayout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(jLabel1))
-                    .addGroup(PanelLoginLayout.createSequentialGroup()
-                        .addGap(66, 66, 66)
                         .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PasswordLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                            .addComponent(UsernameLogin)))
+                            .addGroup(PanelLoginLayout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(jLabel2)
+                                .addGap(3, 3, 3))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel3)))
+                        .addGap(36, 36, 36)
+                        .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(UsernameLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(PanelLoginLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
+                        .addGap(124, 124, 124)
                         .addComponent(BotonLogin)))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         PanelLoginLayout.setVerticalGroup(
             PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLoginLayout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(jLabel1)
-                .addGap(98, 98, 98)
+                .addGap(93, 93, 93)
                 .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UsernameLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -134,9 +183,9 @@ public class Ticket extends javax.swing.JFrame {
                 .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(PasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
+                .addGap(70, 70, 70)
                 .addComponent(BotonLogin)
-                .addContainerGap(275, Short.MAX_VALUE))
+                .addContainerGap(265, Short.MAX_VALUE))
         );
 
         jLabel5.setText("Crear usuario");
@@ -286,10 +335,20 @@ public class Ticket extends javax.swing.JFrame {
         });
 
         jButton3.setText("Administracion de eventos");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Administracion de usuarios");
 
-        jButton5.setText("Reportes");
+        BotonReportes.setText("Reportes");
+        BotonReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonReportesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelControlMenuLayout = new javax.swing.GroupLayout(PanelControlMenu);
         PanelControlMenu.setLayout(PanelControlMenuLayout);
@@ -300,12 +359,12 @@ public class Ticket extends javax.swing.JFrame {
                 .addGroup(PanelControlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelControlMenuLayout.createSequentialGroup()
-                        .addGap(0, 22, Short.MAX_VALUE)
+                        .addGap(0, 15, Short.MAX_VALUE)
                         .addGroup(PanelControlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotonReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 22, Short.MAX_VALUE)))
+                        .addGap(0, 14, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(PanelControlMenuLayout.createSequentialGroup()
                 .addGap(63, 63, 63)
@@ -322,10 +381,258 @@ public class Ticket extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotonReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                 .addComponent(CerrarSesionBoton)
                 .addGap(62, 62, 62))
+        );
+
+        javax.swing.GroupLayout PanelAdministrarUsuariosLayout = new javax.swing.GroupLayout(PanelAdministrarUsuarios);
+        PanelAdministrarUsuarios.setLayout(PanelAdministrarUsuariosLayout);
+        PanelAdministrarUsuariosLayout.setHorizontalGroup(
+            PanelAdministrarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 520, Short.MAX_VALUE)
+        );
+        PanelAdministrarUsuariosLayout.setVerticalGroup(
+            PanelAdministrarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        BotonCrearEvento.setText("Crear evento");
+        BotonCrearEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCrearEventoActionPerformed(evt);
+            }
+        });
+
+        BotonEliminarEvento.setText("Eliminar evento");
+        BotonEliminarEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEliminarEventoActionPerformed(evt);
+            }
+        });
+
+        BotonEditarEvento.setText("Editar evento");
+
+        jButton8.setText("Ver evento");
+
+        jButton9.setText("Regresar");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Eventos");
+
+        javax.swing.GroupLayout PanelEventosLayout = new javax.swing.GroupLayout(PanelEventos);
+        PanelEventos.setLayout(PanelEventosLayout);
+        PanelEventosLayout.setHorizontalGroup(
+            PanelEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEventosLayout.createSequentialGroup()
+                .addGroup(PanelEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelEventosLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(PanelEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BotonCrearEvento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotonEliminarEvento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotonEditarEvento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(PanelEventosLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel11)))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        PanelEventosLayout.setVerticalGroup(
+            PanelEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEventosLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addComponent(BotonCrearEvento)
+                .addGap(53, 53, 53)
+                .addComponent(BotonEliminarEvento)
+                .addGap(53, 53, 53)
+                .addComponent(BotonEditarEvento)
+                .addGap(50, 50, 50)
+                .addComponent(jButton8)
+                .addGap(92, 92, 92)
+                .addComponent(jButton9)
+                .addGap(92, 92, 92))
+        );
+
+        jLabel8.setText("Crear evento");
+
+        jLabel12.setText("ID:");
+
+        jLabel13.setText("Nombre:");
+
+        jLabel14.setText("Fecha:");
+
+        jLabel15.setText("Monto:");
+
+        jLabel16.setText("Cant. de pers.:");
+
+        jButton10.setText("Crear");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout CrearDeportivoLayout = new javax.swing.GroupLayout(CrearDeportivo);
+        CrearDeportivo.setLayout(CrearDeportivoLayout);
+        CrearDeportivoLayout.setHorizontalGroup(
+            CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearDeportivoLayout.createSequentialGroup()
+                .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CrearDeportivoLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jLabel8))
+                    .addGroup(CrearDeportivoLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(jTextField2)
+                            .addComponent(jTextField3)
+                            .addComponent(jTextField4)
+                            .addComponent(jTextField5)))
+                    .addGroup(CrearDeportivoLayout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(jButton10)))
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+        CrearDeportivoLayout.setVerticalGroup(
+            CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearDeportivoLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel8)
+                .addGap(49, 49, 49)
+                .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(72, 72, 72)
+                .addComponent(jButton10)
+                .addContainerGap(143, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout PanelCrearEventoLayout = new javax.swing.GroupLayout(PanelCrearEvento);
+        PanelCrearEvento.setLayout(PanelCrearEventoLayout);
+        PanelCrearEventoLayout.setHorizontalGroup(
+            PanelCrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCrearEventoLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(CrearDeportivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        PanelCrearEventoLayout.setVerticalGroup(
+            PanelCrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCrearEventoLayout.createSequentialGroup()
+                .addGap(18, 66, Short.MAX_VALUE)
+                .addComponent(CrearDeportivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
+        );
+
+        jLabel20.setText("Eliminar Evento");
+
+        jLabel22.setText("Ingrese el ID:");
+
+        jButton16.setText("Eliminar");
+
+        jLabel23.setBackground(new java.awt.Color(204, 0, 51));
+        jLabel23.setText("Se cobrara una indemnizacion por cancelar el evento...");
+
+        javax.swing.GroupLayout PanelEliminarEventoLayout = new javax.swing.GroupLayout(PanelEliminarEvento);
+        PanelEliminarEvento.setLayout(PanelEliminarEventoLayout);
+        PanelEliminarEventoLayout.setHorizontalGroup(
+            PanelEliminarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEliminarEventoLayout.createSequentialGroup()
+                .addGroup(PanelEliminarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelEliminarEventoLayout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jLabel22)
+                        .addGap(58, 58, 58)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelEliminarEventoLayout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addGroup(PanelEliminarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addGroup(PanelEliminarEventoLayout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(jButton16))))
+                    .addGroup(PanelEliminarEventoLayout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabel23)))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        PanelEliminarEventoLayout.setVerticalGroup(
+            PanelEliminarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEliminarEventoLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jLabel20)
+                .addGap(74, 74, 74)
+                .addGroup(PanelEliminarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(jLabel23)
+                .addGap(18, 18, 18)
+                .addComponent(jButton16)
+                .addContainerGap(305, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout PanelAdministrarEventosLayout = new javax.swing.GroupLayout(PanelAdministrarEventos);
+        PanelAdministrarEventos.setLayout(PanelAdministrarEventosLayout);
+        PanelAdministrarEventosLayout.setHorizontalGroup(
+            PanelAdministrarEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAdministrarEventosLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(PanelEventos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(PanelCrearEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(PanelEliminarEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1439, Short.MAX_VALUE))
+        );
+        PanelAdministrarEventosLayout.setVerticalGroup(
+            PanelAdministrarEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAdministrarEventosLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(PanelEventos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+            .addGroup(PanelAdministrarEventosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelAdministrarEventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAdministrarEventosLayout.createSequentialGroup()
+                        .addComponent(PanelCrearEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAdministrarEventosLayout.createSequentialGroup()
+                        .addComponent(PanelEliminarEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))))
         );
 
         javax.swing.GroupLayout PanelMenuPrincipalLayout = new javax.swing.GroupLayout(PanelMenuPrincipal);
@@ -335,14 +642,22 @@ public class Ticket extends javax.swing.JFrame {
             .addGroup(PanelMenuPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(PanelControlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1505, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(PanelAdministrarEventos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(PanelAdministrarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelMenuPrincipalLayout.setVerticalGroup(
             PanelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMenuPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(PanelControlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(PanelAdministrarEventos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelMenuPrincipalLayout.createSequentialGroup()
+                .addComponent(PanelAdministrarUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -355,11 +670,11 @@ public class Ticket extends javax.swing.JFrame {
                     .addComponent(PanelMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PanelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(37, 37, 37)
                         .addComponent(PanelCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(PanelInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,7 +686,7 @@ public class Ticket extends javax.swing.JFrame {
                     .addComponent(PanelInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(PanelMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(661, Short.MAX_VALUE))
+                .addContainerGap(667, Short.MAX_VALUE))
         );
 
         pack();
@@ -389,7 +704,9 @@ public class Ticket extends javax.swing.JFrame {
             PanelLogin.setVisible(false);
             PanelMenuPrincipal.setVisible(true);
             PanelControlMenu.setVisible(true);
-            this.setSize(1100, 800);
+            this.setSize(1100, 700);
+            this.PanelAdministrarEventos.setVisible(false);
+            this.PanelAdministrarUsuarios.setVisible(false);
             
             
             //ajustes menu principal
@@ -398,6 +715,7 @@ public class Ticket extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
             PasswordLogin.setText("");
+            
         }
     }//GEN-LAST:event_BotonLoginActionPerformed
 
@@ -439,7 +757,7 @@ public class Ticket extends javax.swing.JFrame {
         PanelInicio.setVisible(true);
         this.setSize(450, 550);
         JOptionPane.showMessageDialog(null, "Sesion cerrada exitosamente");
-       
+        
         
     }//GEN-LAST:event_CerrarSesionBotonActionPerformed
 
@@ -447,6 +765,39 @@ public class Ticket extends javax.swing.JFrame {
         // TODO add your handling code here:\
         System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void BotonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonReportesActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Opcion en mantenimiento.....");
+    }//GEN-LAST:event_BotonReportesActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        this.PanelAdministrarEventos.setVisible(true);
+        this.PanelCrearEvento.setVisible(false);
+        this.PanelEliminarEvento.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void BotonEliminarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarEventoActionPerformed
+        // TODO add your handling code here:\
+        this.PanelEliminarEvento.setVisible(true);
+    }//GEN-LAST:event_BotonEliminarEventoActionPerformed
+
+    private void BotonCrearEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearEventoActionPerformed
+        // TODO add your handling code here:
+        this.PanelCrearEvento.setVisible(true);
+        this.CrearDeportivo.setVisible(false);
+        
+    }//GEN-LAST:event_BotonCrearEventoActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        this.PanelEventos.setVisible(false);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -484,33 +835,63 @@ public class Ticket extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonCrearEvento;
+    private javax.swing.JButton BotonEditarEvento;
+    private javax.swing.JButton BotonEliminarEvento;
     private javax.swing.JButton BotonLogin;
+    private javax.swing.JButton BotonReportes;
     private javax.swing.JButton CerrarSesionBoton;
     private javax.swing.JButton CrearCuenta;
+    private javax.swing.JPanel CrearDeportivo;
     private javax.swing.JPasswordField CrearPasswordField;
     private javax.swing.JTextField CrearUsernameField;
     private javax.swing.JButton CrearUsuarioBoton;
     private javax.swing.JLabel DisplayRolMenu;
     private javax.swing.JLabel DisplayUsernameMenu;
+    private javax.swing.JPanel PanelAdministrarEventos;
+    private javax.swing.JPanel PanelAdministrarUsuarios;
     private javax.swing.JPanel PanelControlMenu;
+    private javax.swing.JPanel PanelCrearEvento;
     private javax.swing.JPanel PanelCrearUsuario;
+    private javax.swing.JPanel PanelEliminarEvento;
+    private javax.swing.JPanel PanelEventos;
     private javax.swing.JPanel PanelInicio;
     private javax.swing.JPanel PanelLogin;
     private javax.swing.JPanel PanelMenuPrincipal;
     private javax.swing.JPasswordField PasswordLogin;
     private javax.swing.JTextField UsernameLogin;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 }
