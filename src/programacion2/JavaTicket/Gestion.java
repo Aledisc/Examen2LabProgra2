@@ -6,7 +6,7 @@ import programacion2.JavaTicket.Usuario.TipoUsuario;
 public class Gestion {
 
     private ArrayList<Usuario> usuarios;
-    private ArrayList<Evento> eventos;
+    private ArrayList<Evento2> eventos;
 
     public Gestion() {
         usuarios = new ArrayList<>();
@@ -20,7 +20,7 @@ public class Gestion {
         usuarios.add(usuario);
     }
 
-    public void agregarEvento(Evento evento) {
+    public void agregarEvento(Evento2 evento) {
         eventos.add(evento);
     }
 
@@ -28,11 +28,11 @@ public class Gestion {
         return usuarios;
     }
 
-    public ArrayList<Evento> getEventos() {
+    public ArrayList<Evento2> getEventos() {
         return eventos;
     }
 
-            //version normal
+    //version normal
     public Usuario encontrarUsuario(String usuarioIngresado) {
         for (Usuario username : usuarios) {
             if (username.getUsername().equals(usuarioIngresado)) {
@@ -54,9 +54,7 @@ public class Gestion {
     }
     return null; // No se encontró ningún usuario con el nombre de usuario proporcionado
 }
-*/
-
-
+     */
     public boolean tienePermiso(Usuario username, TipoUsuario tipoRequerido) {
         return username.getTipoUsuario() == tipoRequerido;
     }
@@ -112,4 +110,20 @@ public class Gestion {
         }
     }
 
+    //GESTION DE LOS EVENTOS----------------------------------------------------------------------------
+    
+    
+    public void crearEventoDesdeInterfaz(int ingresarID, String ingresarNombre, double ingresarMonto, int ingresarCapacidad, String autoria) {
+        int ID = ingresarID;
+        String nombreEvento = ingresarNombre;
+        double valorRenta = ingresarMonto;
+        int capacidadEvento = ingresarCapacidad;
+        String autor = autoria;
+
+        Evento2 nuevoEvento = new Evento2(ID, nombreEvento, valorRenta, autor);
+
+        eventos.add(nuevoEvento);
+    }
+    
+    
 }
