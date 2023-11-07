@@ -16,6 +16,7 @@ public class Ticket extends javax.swing.JFrame {
      * Creates new form Ticket
      */
     Gestion gestion = new Gestion();
+    //SesionUsuario sesion = new SesionUsuario();
     JCalendar calendar = new JCalendar();
     //Para cerrar sesion usar SesionUsuario.cerrarSesion(); en el boton!!!!!!!!!!
     
@@ -97,12 +98,12 @@ public class Ticket extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
+        FieldID = new javax.swing.JTextField();
+        FieldNombre = new javax.swing.JTextField();
+        FieldFecha = new javax.swing.JTextField();
+        FieldMonto = new javax.swing.JTextField();
+        FieldCapacidad = new javax.swing.JTextField();
+        CrearEvento = new javax.swing.JButton();
         PanelEliminarEvento = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -474,10 +475,10 @@ public class Ticket extends javax.swing.JFrame {
 
         jLabel16.setText("Cant. de pers.:");
 
-        jButton10.setText("Crear");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        CrearEvento.setText("Crear");
+        CrearEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                CrearEventoActionPerformed(evt);
             }
         });
 
@@ -500,14 +501,14 @@ public class Ticket extends javax.swing.JFrame {
                             .addComponent(jLabel12))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField5)))
+                            .addComponent(FieldID, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(FieldNombre)
+                            .addComponent(FieldFecha)
+                            .addComponent(FieldMonto)
+                            .addComponent(FieldCapacidad)))
                     .addGroup(CrearDeportivoLayout.createSequentialGroup()
                         .addGap(98, 98, 98)
-                        .addComponent(jButton10)))
+                        .addComponent(CrearEvento)))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
         CrearDeportivoLayout.setVerticalGroup(
@@ -518,25 +519,25 @@ public class Ticket extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FieldFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FieldMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(CrearDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FieldCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(72, 72, 72)
-                .addComponent(jButton10)
+                .addComponent(CrearEvento)
                 .addContainerGap(143, Short.MAX_VALUE))
         );
 
@@ -795,9 +796,12 @@ public class Ticket extends javax.swing.JFrame {
         this.PanelEventos.setVisible(false);
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void CrearEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearEventoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+        gestion.crearEventoDesdeInterfaz(Integer.parseInt(FieldID.getText()), FieldNombre.getText(), Double.parseDouble(FieldMonto.getText()), Integer.parseInt(FieldCapacidad.getText()), gestion.obtenerRolUsuarioEnSesion());
+        JOptionPane.showMessageDialog(null, "Evento creado exitosamente");
+        
+    }//GEN-LAST:event_CrearEventoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -843,11 +847,17 @@ public class Ticket extends javax.swing.JFrame {
     private javax.swing.JButton CerrarSesionBoton;
     private javax.swing.JButton CrearCuenta;
     private javax.swing.JPanel CrearDeportivo;
+    private javax.swing.JButton CrearEvento;
     private javax.swing.JPasswordField CrearPasswordField;
     private javax.swing.JTextField CrearUsernameField;
     private javax.swing.JButton CrearUsuarioBoton;
     private javax.swing.JLabel DisplayRolMenu;
     private javax.swing.JLabel DisplayUsernameMenu;
+    private javax.swing.JTextField FieldCapacidad;
+    private javax.swing.JTextField FieldFecha;
+    private javax.swing.JTextField FieldID;
+    private javax.swing.JTextField FieldMonto;
+    private javax.swing.JTextField FieldNombre;
     private javax.swing.JPanel PanelAdministrarEventos;
     private javax.swing.JPanel PanelAdministrarUsuarios;
     private javax.swing.JPanel PanelControlMenu;
@@ -861,7 +871,6 @@ public class Ticket extends javax.swing.JFrame {
     private javax.swing.JPasswordField PasswordLogin;
     private javax.swing.JTextField UsernameLogin;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -887,11 +896,6 @@ public class Ticket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 }
