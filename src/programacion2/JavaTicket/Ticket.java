@@ -414,18 +414,8 @@ public class Ticket extends javax.swing.JFrame {
         });
 
         BotonEditarEvento.setText("Editar evento");
-        BotonEditarEvento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonEditarEventoActionPerformed(evt);
-            }
-        });
 
         jButton8.setText("Ver evento");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
 
         jButton9.setText("Regresar");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -829,16 +819,6 @@ public class Ticket extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se encontro un evento con el ID");
         }
     }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void BotonEditarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEditarEventoActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Opcion en mantenimiento");
-    }//GEN-LAST:event_BotonEditarEventoActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Opcion en mantenimiento");
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
