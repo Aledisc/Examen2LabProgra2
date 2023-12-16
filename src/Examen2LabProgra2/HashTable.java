@@ -45,17 +45,21 @@ public class HashTable {
         }
         return false;
     }
-    
-    
-    public long Search(String username){
-        Entry tmp = inicio;
-        while(tmp!=null){
-            if (tmp.username == username){
-                return tmp.pos;
+
+    public long Search(String username) {
+        if (inicio != null) {
+            if (inicio.username.equals(username)) {
+                return inicio.pos;
+            } else {
+                Entry tmp = inicio;
+                while (tmp.siguiente != null) {
+                    if (tmp.username.equals(username)) {
+                        return tmp.pos;
+                    }
+                    tmp = tmp.siguiente;
+                }
             }
-            tmp = tmp.siguiente;
         }
         return -1;
     }
-
 }
